@@ -85,24 +85,3 @@ function about() {
 
 	});
 }
-
-// function init() {
-// 		$.ajax({
-// 		url: "https://api.at.govt.nz/v1/public/display/parkinglocations?api_key=be3ef1c9-e1f1-4893-8b89-38d2ad66f6ee",
-// 		type: 'GET',
-// 		dataType: 'jsonp',
-// 		crossDomain: true,
-// 		contentType: 'application/json; charset=utf-8',
-// 		jsonpCallback: 'localJsonpCallback',
-// 		success: function(data) {
-// 			console.log(data);
-// 			var stopData = data.response;
-
-// 			initMap(stopData);
-// 		},
-// 		error: function(e) {
-// 			alert(e + "error");
-// 		}
-// 	});
-
-// }

@@ -38,6 +38,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript">
+		// Currently using v1 API as v2 does not include the API Key header. 
 		$.ajax({
 			url: "https://api.at.govt.nz/v1/public/display/parkinglocations?api_key=be3ef1c9-e1f1-4893-8b89-38d2ad66f6ee",
 			type: 'GET',
