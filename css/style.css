@@ -1,0 +1,75 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map {
+	width: 100%;
+	height: 100%;
+	background: gray;
+}
+
+.map-container {
+	width: 100%;
+	height: 100%;
+}
+
+.map-nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background: rgba(255,255,255,0.8);
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.map-nav .logo {
+	margin-top: 0;
+	margin-right: 35px;
+	width: 100px;
+	font-family: 'Arvo', serif;
+	color: #88C4FD;
+	font-weight: 700;
+	display: inline-block;
+}
+
+.nav-search {
+	margin-top: 2px;
+}
+
+@media (max-width: 370px) {
+	.map-nav .logo {
+		font-size: 14px;
+		margin-top: 5px;
+	}
+
+	.navbar-header .form-control {
+		width: 130px;
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 420px) {
+	.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.container-fluid .fa {
+	padding-top: 5px;
+	color: #88C4FD;
+	cursor: pointer;
+}
+
+.container-fluid form {
+	margin-top: 2px;
+}

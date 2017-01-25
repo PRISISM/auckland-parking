@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Auckland Parking</title>
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Styles -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.3.2/sweetalert2.min.css">
+ 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+ 	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+
+</head>
+<body>
+		<!-- <h3>Find A Stop</h3> -->
+		<div class="map-container">
+			<div id="map"></div>
+		</div>
+
+		<div class="map-nav navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header pull-left">
+					<h4 class="logo text-center">Auckland Parking</h4>
+				</div>
+				
+				<div class="navbar-header pull-left nav-search">
+					<input type="text" class="form-control" placeholder="Enter a location" id="nav-input">
+
+				</div>
+
+				<span class="fa fa-info-circle fa-2x pull-right" aria-hidden="true" onclick="about()"></span>
+			</div>
+
+		</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			url: "https://api.at.govt.nz/v1/public/display/parkinglocations?api_key=be3ef1c9-e1f1-4893-8b89-38d2ad66f6ee",
+			type: 'GET',
+			dataType: 'jsonp',
+			crossDomain: true,
+			contentType: 'application/json; charset=utf-8',
+			jsonpCallback: 'localJsonpCallback',
+			success: function(data) {
+				var stopData = data.response;
+
+				initMap(stopData);
+			},
+			error: function(e) {
+				swal("Sorry! There was an error in calling the AT API!");
+			}
+		});
+
+	</script>
+
+	<!-- Loading Google Maps API and including the Places library -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD4qAouydFXWuvxD_6OOXm8y7l0xITaRo&callback=initMap&libraries=places" type="text/javascript"></script>
+	
+	<!-- SWAL2 JS -->
+	<script src="https://cdn.jsdelivr.net/sweetalert2/6.3.2/sweetalert2.min.js"></script>
+</body>
+</html>
